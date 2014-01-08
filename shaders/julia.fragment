@@ -1,0 +1,25 @@
+precision mediump float;
+
+varying vec2 pos;
+uniform vec2 c;
+
+void main(void) {
+    vec2 z = pos;
+    int iters = 100;
+    for (int iter = 0; iter < 100; iter++) {
+        if (dot(z, z) > 4.0) {
+            iters = iter;
+            break;
+        }
+        z = vec2(z.x * z.x - z.y * z.y, 2.0 * z.x * z.y) + c;
+    }
+
+    float a = float(iters) / 100.0 * 3.0;
+    if (a < 1.0) {
+        gl_FragColor = mix(vec4(0.0, 0.0, 0.0, 1.0), vec4(0.0, 0.0, 1.0, 1.0), a);
+    } else if (a < 2.0) {
+        gl_FragColor = mix(vec4(0.0, 0.0, 1.0, 1.0), vec4(0.0, 1.0, 0.0, 1.0), a - 1.0);
+    } else {
+        gl_FragColor = mix(vec4(0.0, 0.1, 0.0, 1.0), vec4(1.0, 0.0, 0.0, 1.0), a - 2.0);
+    }
+}
