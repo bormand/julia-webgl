@@ -13,6 +13,6 @@ And you need modern browser too... Latest versions of Chrome, Chromium and Firef
 should do it for most operation systems.
 
 For troubleshooting try this pages:
-http://caniuse.com/webgl
-http://get.webgl.org/troubleshooting/
-http://learningwebgl.com/blog/?p=11
+- http://caniuse.com/webgl
+- http://get.webgl.org/troubleshooting/
+- http://learningwebgl.com/blog/?p=11
